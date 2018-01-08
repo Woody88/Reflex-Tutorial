@@ -12,11 +12,15 @@ import Tutorial.Tut03
 import Tutorial.Tut04
 import Tutorial.Tut07
 import Tutorial.Tut08
+import Tutorial.Tut09
+import Tutorial.Tut10
+import Tutorial.Tut11
+import Tutorial.Tut12
 
 main :: IO ()
 main = run 3000 $ mainWidget $ app
 
-app :: Widget x ()
+app :: MonadWidget t m => m ()
 app = el "div" $ do
     elClass "h1" "mainTitle" $ text "Hello Reflex!"
     t01 <- newWidget tut01 "1"
@@ -27,6 +31,10 @@ app = el "div" $ do
     t06 <- newWidget tut06 "6"
     t07 <- newWidget tut07 "7"
     t08 <- newWidget tut08 "8"
+    t08 <- newWidget tut09 "9"
+    t10 <- newWidget tut10 "10"
+    t11 <- newWidget tut11 "11"
+    t12 <- newWidget tut12 "12"
     return ()
 
 
